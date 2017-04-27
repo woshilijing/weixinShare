@@ -1,0 +1,163 @@
+if(document.domain != 't.ynet.com'){
+    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+    if(location.href.toLowerCase().indexOf('?mib_juhe') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2502373',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+    }else{
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385732',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+    }
+}else{
+    if(location.href.indexOf('10685226.html?kuguo1') != -1 ){
+    document.writeln("<script type=\"text/javascript\">");
+    document.writeln("/*LJ1-广告矩形3创建于 2016-01-05*/");
+    document.writeln("var cpro_id = \"u2478922\";");
+    document.writeln("</script>");
+    document.writeln("<script src=\"http://cpro.baidustatic.com/cpro/ui/cm.js\" type=\"text/javascript\"></script>");
+    }else if(location.href.indexOf('?baidu_wise') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355661',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.toLowerCase().indexOf('?shenma') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355883',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.toLowerCase().indexOf('?sogou') != -1 || location.href.toLowerCase().indexOf('?sougou') != -1){
+
+        var tmp = document.createElement('link');
+	_(tmp).attr({'rel':'stylesheet','href':'/c/css/sogouapi.css','type':'text/css'});
+	_('head').append(tmp);
+        document.writeln('<div class="conBox"><form action="https://m.sogou.com/web/searchList.jsp" method="get" target="_blank" id="sogou_form" accept-charset="utf-8"><input type="hidden" value="sogou-waps-cfa258af990f9cb1" name="pid"><input type="hidden" value="5" name="v">	<div class="searchBox"><div class="inputBox"><input name="keyword" id="sogou_keyword" class="inputText" type="text"><input class="inputSubmit" value="" type="submit"></div></div></form><ul class="cfix searchUl" id="sogou_links"></ul></div>');
+setTimeout(function(){
+		_.ajax({
+			'type':'post',
+			'data':{'url':location.href,'title':document.title,'content':_('#page').html().replace(/(<([^>]+)>)/ig,"")},
+			'url':'http://web.ynet.com/sogouapi/',
+			'success':function(result){
+                                if(result['msg'] != 'success') return false;
+				var tmp = result['data']['querylist'];
+				for(var i = 0;i < tmp.length;i++){
+					var li = document.createElement('li');
+					_(li).html('<a href="https://m.sogou.com/web/searchList.jsp?keyword='+encodeURI(tmp[i]['query'])+'&pid=sogou-waps-03fcd68e5673f08b&v=5" target="_blank">'+tmp[i]['query']+'</a>');
+					_('#sogou_links').append(li);
+				}
+			}
+		});
+},500);
+
+setTimeout(function(){
+		_.ajax({
+			'type':'get',
+			'url':'http://web.ynet.com/sogouapi/xml/',
+			'success':function(result){
+				var tmp = result['item'];
+				var keyword = result['item'][parseInt(tmp.length*Math.random())]['word'];
+				_('#sogou_keyword').val(keyword);
+			}
+		});
+},800);
+    }else if(location.href.toLowerCase().indexOf('?h5_tuiguang') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2622273',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.toLowerCase().indexOf('?360card') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '3052011',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.indexOf('?') == -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355056',
+                container: s,
+                size: '20,3',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2402947',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.toLowerCase().indexOf('?123_mobile') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2570530',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+
+    }else if(location.href.indexOf('?sougou') == -1){
+        document.writeln("<script type=\"text/javascript\">");
+        document.writeln("var cpro_id=\"u2207021\";");
+        document.writeln("(window[\"cproStyleApi\"] = window[\"cproStyleApi\"] || {})[cpro_id]={at:\"3\",hn:\"0\",wn:\"0\",imgRatio:\"1.7\",scale:\"20.20\",pat:\"6\",tn:\"template_inlay_all_mobile_lu_native\",rss1:\"#FFFFFF\",adp:\"1\",ptt:\"0\",titFF:\"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91\",titFS:\"14\",rss2:\"#000000\",titSU:\"0\",ptbg:\"70\",ptp:\"1\"}");
+        document.writeln("</script>");
+        document.writeln("<script src=\"http://cpro.baidustatic.com/cpro/ui/cm.js\" type=\"text/javascript\"></script>");
+        
+    }
+}
+
+
+
+

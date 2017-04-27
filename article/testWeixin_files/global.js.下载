@@ -1,0 +1,28 @@
+function is_mobile(){
+ return /.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent));
+}
+if(typeof($) == 'function'){
+	$(function(){
+		
+		$("#subButton").click(function() {
+	
+			if( $("#bdcsMain").val() ){
+	
+				$("#form_1").submit();
+	
+			}		
+		});
+	});
+}
+try{
+	if(is_mobile()){
+		_.ready(function(){
+			_('.ynet_video').each(function(){
+				//console.log(_(this).width())
+				_(this).height(((_(this).width()*9/16)+46)+'px');
+			});
+		});
+	}
+}catch(err){
+	//console.log(err)
+}

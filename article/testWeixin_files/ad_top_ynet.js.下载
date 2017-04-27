@@ -1,0 +1,410 @@
+if(document.domain != 't.ynet.com'){
+    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+        var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+        }
+    if(location.href.toLowerCase().indexOf('?mib_juhe') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+        }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2502355',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2502366',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+    }else{
+        //section 1-1
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385719',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+        //section 1-2
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385728',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+        //section 1-3
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385729',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+    }
+}else{
+if(location.href.indexOf('10685226.html?kuguo1') != -1 ){
+
+  document.writeln("<script type=\"text/javascript\">");
+    document.writeln("/*LJ1-广告通栏1创建于 2016-01-05*/");
+    document.writeln("var cpro_id = \"u2478899\";");
+    document.writeln("</script>");
+    document.writeln("<script src=\"http://cpro.baidustatic.com/cpro/ui/cm.js\" type=\"text/javascript\"></script>");
+  document.writeln("<script type=\"text/javascript\">");
+    document.writeln("/*LJ1-广告通栏2 创建于 2016-01-05*/");
+    document.writeln("var cpro_id = \"u2478912\";");
+    document.writeln("</script>");
+    document.writeln("<script src=\"http://cpro.baidustatic.com/cpro/ui/cm.js\" type=\"text/javascript\"></script>");
+
+}else if(location.href.indexOf('?baidu_wise') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+            }
+//section1-1
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385501',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+//section1-2
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385505',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+//section2-1
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385506',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+//section2-2
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385507',
+                container: s,
+                size: '20,12',
+                display: 'inlay-fix'
+            });
+        })();
+
+//section3-1
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385511',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+//section3-2
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2352692',
+                container: s,
+                size: '20,3',
+                display: 'inlay-fix'
+            });
+        })();
+
+    }else if(location.href.toLowerCase().indexOf('?shenma') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+            }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355865',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" class="ad_mgt20"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355871',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" class="ad_mgt20"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355874',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.toLowerCase().indexOf('?sougou') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+            }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2358720',
+                container: s,
+                size: '20,6',
+                display: 'inlay-fix'
+            });
+        })();
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" class="ad_mgt20"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2404985',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" class="ad_mgt20"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2404991',
+                container: s,
+                size: '20,3',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.toLowerCase().indexOf('?123_mobile') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+        }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2570441',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2570484',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+        //
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2570497',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+
+    }else if(location.href.toLowerCase().indexOf('?h5_tuiguang') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+        }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2622253',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2622258',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2622260',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+
+    }else if(location.href.toLowerCase().indexOf('?360card') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+        }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '3051989',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '3052002',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '3052009',
+                container: s,
+                size: '20,7',
+                display: 'inlay-fix'
+            });
+        })();
+
+    }else if(location.href.indexOf('?') == -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+        }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                    id: '2354952',
+                    container: s,
+                    size: '20,3',
+                    display: 'inlay-fix'
+            });
+            _('#'+s).parent().css({'width':'100% !important'});
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                    id: '2403027',
+                    container: s,
+                    size: '20,20',
+                    display: 'inlay-fix'
+            });
+            _('#'+s).parent().css({'width':'100% !important'});
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                    id: '2389615',
+                    container: s,
+                    size: '20,7',
+                    display: 'inlay-fix'
+            });
+            _('#'+s).parent().css({'width':'100% !important'});
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                    id: '2354861',
+                    container: s,
+                    size: '20,7',
+                    display: 'inlay-fix'
+            });
+            _('#'+s).parent().css({'width':'100% !important'});
+        })();
+    }else{
+        document.write('<a style="display:none!important" id="tanx-a-mm_13767431_9242455_33954392"></a>');
+        tanx_s = document.createElement("script");
+        tanx_s.type = "text/javascript";
+        tanx_s.charset = "gbk";
+        tanx_s.id = "tanx-s-mm_13767431_9242455_33954392";
+        tanx_s.async = true;
+        tanx_s.src = "http://p.tanx.com/ex?i=mm_13767431_9242455_33954392";
+        tanx_h = document.getElementsByTagName("head")[0];
+        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+
+        
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){
+            var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);
+         }
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" class="ad_mgt20"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2344363',
+                container: s,
+                size: '320,100',
+                display: 'inlay-fix'
+            });
+        })();
+    }
+}

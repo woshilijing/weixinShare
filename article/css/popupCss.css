@@ -1,0 +1,115 @@
+/*弹窗样式*/
+.cfix:after{content:".";visibility:hidden;display:block;clear:both;height:0;}
+.cfix{zoom:1;}
+.envon{
+    width:90%;
+    overflow:hidden;
+    display:none;
+    border-radius:10px;
+    background-color:#ffffff;
+}
+
+.envon .popupNav{
+    height:3.8rem;
+    line-height: 3.8rem;
+    background:#dddddd;
+    position: relative;
+}
+.envon .popupNav .success{
+    width:1.6rem;
+    height:1.6rem;
+    position: absolute;
+    top:1.1rem;
+    left:30%;
+
+}
+.envon .popupNav .close{
+    position: absolute;
+    top:0.4rem;
+    right:1.4rem;
+}
+.envon .popupNav .close img{
+    width:1.4rem;
+    height:1.4rem;
+}
+
+.envon .popupNav h2{
+    text-align: center;
+    color: #fa0420;
+    font-size:20px;
+    font-weight: normal;
+}
+
+.envon h3{
+    padding:1.4rem 0 0.75rem 1.5rem;
+    font-size:20px;
+    color:#bbbbbb;
+    font-weight: normal;
+}
+.envon .popupList{
+    width:88%;
+    margin:0 auto;
+}
+.envon .popupList li{
+    line-height:4.5rem;
+    font-size:16px;
+    border-top:1px solid #dddddd;
+}
+.envon .popupList li.borderBottom{
+    border-bottom:1px solid #dddddd;
+}
+.envon .popupList li span{
+    float: left;
+    display: block;
+    width:.3rem;
+    height:.3rem;
+    border:1px solid #fa0420;
+    background: #fa0420;
+    border-radius: 1rem;
+    margin-top:2rem;
+}
+.envon .popupList li a{
+    display: block;
+    color: #727171;
+    margin-left:1.4rem;
+
+}
+.envon .moreNews{
+    width:90%;
+    height:3.3rem;
+    /* line-height: 2.8rem;*/
+    border:2px solid #fa0420;
+    border-radius: 1rem;
+    margin:6rem 1.5rem 6rem 1.4rem;
+
+}
+.envon .moreNews img{
+    width:2.4rem;
+    height:2.4rem;
+    margin:.4rem 1.6rem .4rem 2.46rem;
+    float: left;
+}
+.envon .moreNews p{
+    float: left;
+    line-height: 3.3rem;
+}
+.envon .moreNews p a{
+    color: #fa0420;
+    font-size:18px;
+}
+@media only screen and ( max-width:320px) {
+    .envon .popupList li{
+        font-size:14px;
+    }
+    .envon .moreNews img{
+        margin:.5rem 1.6rem .5rem 2.4rem;
+    }
+    .envon .moreNews p a{
+        font-size:14px;
+    }
+
+    .envon .popupNav .success{
+        left:8rem;
+
+    }
+}

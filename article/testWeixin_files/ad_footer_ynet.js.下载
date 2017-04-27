@@ -1,0 +1,246 @@
+if(document.domain != 't.ynet.com'){
+    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}  
+    if(location.href.indexOf('?mib_juhe') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2502398',
+                container: s,
+                size: '20,12',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2502408',
+                container: s,
+                size: '20,3',
+                display: 'float'
+            });
+        })();
+    }else{
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385743',
+                container: s,
+                size: '20,20',
+                display: 'inlay-fix'
+            });
+        })();
+
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2385744',
+                container: s,
+                size: '20,3',
+                display: 'float'
+            });
+        })();
+    }
+}else{
+        var tmp = location.href.split('?');
+        if(tmp[1]){
+            _('#ff a').each(function(){
+                if (_(this).attr('href').indexOf('.html') != -1) {
+                    _(this).attr('href',_(this).attr('href')+'?'+tmp[1]);
+                }
+            });
+            _('.img_content a').each(function(){
+                if (_(this).attr('href').indexOf('.html') != -1) {
+                    _(this).attr('href',_(this).attr('href')+'?'+tmp[1]);
+                }
+            });
+        }
+        if(location.href.indexOf('10685226.html?kuguo1') != -1 ){
+    document.writeln("<script type=\"text/javascript\">");
+    document.writeln("/*LJ1-广告悬浮6 创建于 2016-01-05*/");
+    document.writeln("var cpro_id = \"u2478957\";");
+    document.writeln("</script>");
+    document.writeln("<script src=\"http://cpro.baidustatic.com/cpro/ui/cm.js\" type=\"text/javascript\"></script>");
+    }else if(location.href.indexOf('?baidu_wise') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2352934',
+                container: s,
+                size: '20,12',
+                display: 'inlay-fix'
+            });
+        })();
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2368911',
+                container: s,
+                size: '20,3',
+                display: 'float'
+            });
+        })();
+    }else if(location.href.indexOf('?shenma') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355898',
+                container: s,
+                size: '20,12',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355938',
+                container: s,
+                size: '20,3',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.indexOf('?sougou') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2360617',
+                container: s,
+                size: '20,6',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2360641',
+                container: s,
+                size: '20,6',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.indexOf('?123_mobile') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2570652',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2570684',
+                container: s,
+                size: '20,3',
+                display: 'inlay-fix'
+            });
+        })();
+
+    }else if(location.href.indexOf('?h5_tuiguang') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2622304',
+                container: s,
+                size: '6,5',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2622308',
+                container: s,
+                size: '20,5',
+                display: 'inlay-fix'
+            });
+        })();
+    }else if(location.href.indexOf('?360card') != -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup=window.slotbydup || []).push({
+                    id: '3052048',
+                    container: s,
+                    size: '20,5',
+                    display: 'inlay-fix'
+                });
+            })();
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup=window.slotbydup || []).push({
+                    id: '3052055',
+                    container: s,
+                    size: '20,3',
+                    display: 'float'
+                });
+            })();
+
+    }else if(location.href.indexOf('?') == -1){
+        if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2344651',
+                container: s,
+                size: '20,5',
+                display: 'inlay-fix'
+            });
+        })();
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '" ></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2355165',
+                container: s,
+                size: '20,3',
+                display: 'float'
+            });
+        })();
+    }else{       
+            if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2344651',
+                container: s,
+                size: '20,5',
+                display: 'inlay-fix'
+            });
+        })();
+         if(location.href.indexOf('?360card') == -1){
+        document.writeln("<script type=\"text/javascript\">");
+        document.writeln("    /*M.ynet_I-B5.Banner-05_20:3 创建于 2015-07-14*/");
+        document.writeln("    var cpro_id = \"u2207041\";");
+        document.writeln("<"+"/script>");
+        document.writeln("<script src=\"http://cpro.baidustatic.com/cpro/ui/cm.js\" type=\"text/javascript\"><"+"/script>");
+        }
+       
+    }
+}

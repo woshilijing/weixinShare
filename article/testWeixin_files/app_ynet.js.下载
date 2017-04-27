@@ -1,0 +1,697 @@
+if(/(forward)+/.test(location.search)){
+    var script=document.createElement('script');
+    script.setAttribute("src","http://res1.ynet.com/40/backhome.js")
+    document.getElementsByTagName('head')[0].appendChild(script)
+}
+var nav_link = {'home':'home/','news':'news/','social':'social/','finacial':'finacial/','public':'public/','entertainment':'entertainment/','film':'film/','tv':'tv/','meeting':'meeting/','life':'life/','sports':'sports/'};
+
+    function slide_nav(obj,top){
+        if (!obj)
+        {
+            _('.slide_2015').attr({'status':'close'}).animate({'top':'-200px'},300);
+            _('.fullbg').fadeOut(300,function(){
+                _('.fullbg').hide().height('100%');
+            });
+            return;
+        }
+        if (_(obj).attr('status') != 'open')
+        {
+            _('.slide_2015').css({'top':'-200px'});
+            _(obj).attr({'status':'open'}).animate({'top':'47px'},300);
+            _('.fullbg').css({'opacity':0}).show().animate({'opacity':0.3},300).refillscreen();
+        }else{
+            _(obj).attr({'status':'close'}).animate({'top':'-200px'},300);
+            _('.fullbg').fadeOut(300).height('100%');
+        }
+    }
+_(window).resize(function(){
+    _('.fullbg').refillscreen();
+    _('#ynetVideoIframe').css({'width':'100%','height':(_('#ynetVideoIframe').parent().width()*9/16)+'px'});
+});
+var load_pics = 0,load_recommend = 0,inited_recommend = false,more_rdata = [],inlist_no = 0,timer=null;
+
+function getmore(force){
+    if ((_.pageSize().pageHeight > _.pageSize().windowHeight + _.scrollSize().top) && !force){
+        return ;
+    }
+    wrap_recommend();
+}
+_(window).bind('scroll',function(){
+    getmore(false);
+});
+
+function wrap_pics(){
+    _.ajax({
+        'type':'GET',
+        'data':{},
+        'url':(_('#static_url').attr('content')?_('#static_url').attr('content'):'http://res.ynet.com/')+"YnetView/rttj.json",
+        'fnTimeout':function(){
+            if (!load_pics)
+            {
+                load_pics = 1;
+                wrap_pics();
+            }
+        },
+        'success':function(result){
+            if (result)
+            {
+                var str = '';
+                for (var i in result )
+                {
+                    var data = result[i];
+                    str += '<div class="tuji_list'+(i%2?' tuji_right':' tuji')+'"><a href="'+data['link']+'">'+data['imgs']+'</a><p><a href="'+data['link']+'">'+data['title']+'</a></p></div><div class="fgs"></div>';
+                    if (i > 6)
+                    {
+                        break;
+                    }
+                }
+                _('#wrap_pics').html(str);
+                var tmp = 0;
+                _('.tuji_list').each(function(){
+                    tmp += 1;
+                    if(tmp > 6){
+                        _(this).addClass('tuji_short');
+                    }
+                });
+            }
+            wrap_recommend();
+        }
+    });
+}
+
+function more_recommend(){
+    var total = more_rdata.length;
+    var this_no = 0,tmp_no = inlist_no;
+    for (var i=tmp_no;i<total ;i++ )
+    {
+        var tmp = document.createElement('div');
+        _(tmp).addClass('tuijian').html(more_rdata[i]);
+        _('#wrap_recommend_bottom').append(tmp);
+        inlist_no += 1;
+        this_no += 1;
+        if (this_no == 5)
+        {
+            break;
+        }
+    }
+    _('#end').css({'height':'2rem !important'});
+    _('#jz_bottom').hide();
+}
+
+function wrap_recommend(){
+    if (!inited_recommend) {
+        _.ajax({
+            'type':'GET',
+            'data':{},
+            'url':(_('#static_url').attr('content')?_('#static_url').attr('content'):'http://res.ynet.com/')+"YnetView/jhtj.json",
+            'fnTimeout':function(){
+                if (!load_recommend)
+                {
+                    load_recommend = 1;
+                    wrap_recommend();
+                }
+            },
+            'success':function(result){
+                if (result)
+                {
+                    var str_top = '',str_bottom = '';
+                    for (var i in result )
+                    {
+                        var data = result[i];
+                        if (!data['imgs'])
+                        {
+                            continue ;
+                        }
+                        if (i < 2)
+                        {
+                            var tmp = document.createElement('div');
+                            _(tmp).addClass('tuijian').html('<a href="'+data['link']+'">'+data['imgs']+'</a><div class="list_detail"><p class="tuijianb1"><a href="'+data['link']+'">'+data['title']+'</a></p><p class="tuijianb3">'+data['desc']+'</p><p class="tuijianb2">'+data['date']+'</p></div>');
+                            _('#wrap_recommend_top').append(tmp);
+                            if(i == 1 && document.domain != 't.ynet.com'){                                
+                                if (location.href.indexOf('?mib_juhe') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_top').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2502378',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }else{
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s).css({'height':'90px','margin':'10px 0px'}).html('<iframe src="http://www.ynet.com/c/html/proxy.html?id=2530667" scrolling="no" frameborder="0" style="display:block;margin:0;width:100%;height:90px;"></iframe>');
+                                    _('#wrap_recommend_top').append(tmp);
+                                }
+                            }
+                            if (i == 1 && document.domain == 't.ynet.com') {
+                                if(location.href.indexOf('10685226.html?kuguo1') != -1 ){
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://cpro.baidustatic.com/cpro/ui/cm.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                    var s = "ifr_" + Math.random().toString(36).slice(2);
+                                    var tmp = document.createElement('div');
+                                     _(tmp).addClass('tuijian').html('<div id="'+s+'"></div>');
+                                    _('#wrap_recommend_top').append(tmp);
+                                    BAIDU_CLB_fillSlotAsync('u2478935',s);
+                                }else if (location.href.indexOf('?baidu_wise') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s).css({'height':'90px','margin':'10px 0px'}).html('<iframe src="/c/html/proxy.html?id=2390229" scrolling="no" frameborder="0" style="display:block;margin:0;width:100%;height:90px;"></iframe>');
+                                    _('#wrap_recommend_top').append(tmp);
+                                    /*var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_top').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2390229',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);*/
+                                }
+                                if (location.href.indexOf('?shenma') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s).css({'height':'90px','margin':'10px 0px'}).html('<iframe src="/c/html/proxy.html?id=2519566" scrolling="no" frameborder="0" style="display:block;margin:0;width:100%;height:90px;"></iframe>');
+                                    _('#wrap_recommend_top').append(tmp);
+                                }
+
+                                if (location.href.indexOf('?sougou') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s).css({'height':'90px','margin':'10px 0px'}).html('<iframe src="/c/html/proxy.html?id=2519583" scrolling="no" frameborder="0" style="display:block;margin:0;width:100%;height:90px;"></iframe>');
+                                    _('#wrap_recommend_top').append(tmp);
+                                }
+
+                                if (location.href.indexOf('?123_mobile') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_top').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2570574',
+                                            container: s,
+                                            size: '6,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                
+                                }
+                                if (location.href.indexOf('?h5_tuiguang') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_top').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2622292',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                
+                                }
+                                if (location.href.indexOf('?360card') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_top').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '3052022',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+
+                                }
+
+                                if (location.href.indexOf('?') == -1 && document.domain == 't.ynet.com') {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s).css({'height':'90px','margin':'10px 0px'}).html('<iframe src="/c/html/proxy.html?id=2519556" scrolling="no" frameborder="0" style="display:block;margin:0;width:100%;height:90px;"></iframe>');
+                                    _('#wrap_recommend_top').append(tmp);
+                                }
+                            }
+                        }else if (i < 10) {
+                            var tmp = document.createElement('div');
+                            _(tmp).addClass('tuijian').html('<a href="'+data['link']+'">'+data['imgs']+'</a><div class="list_detail"><p class="tuijianb1"><a href="'+data['link']+'">'+data['title']+'</a></p><p class="tuijianb3">'+data['desc']+'</p><p class="tuijianb2">'+data['date']+'</p></div>');
+                            _('#wrap_recommend_bottom').append(tmp);
+                            if(i == 3 && document.domain != 't.ynet.com'){
+                                var tmp = document.createElement('div');
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                _(tmp).attr('id',s);
+                                _('#wrap_recommend_bottom').append(tmp);
+                                if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                
+                                if (location.href.indexOf('?mib_juhe') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2502381',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }else{
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2390292',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                            }
+                            if (i == 3 && document.domain == 't.ynet.com') {
+                                if(location.href.indexOf('10685226.html?kuguo1') != -1 ){
+                                var tmp = document.createElement('div');
+                                var s = "ifr_" + Math.random().toString(36).slice(2);
+                                 _(tmp).addClass('tuijian').html('<iframe id="'+s+'" style="border:0px;width:100%;max-height:100px;"></iframe>');
+                                 _('#wrap_recommend_bottom').append(tmp);
+                                 var sfr = document.getElementById(s).contentWindow.document; 
+                                 sfr.open();
+                                 sfr.write('\<body>');
+                                 sfr.write('\<script>document.body.style.border = "none";document.body.style.margin = "0px";var cpro_id="u2478950";\<\/script>\<script type="text/javascript" language="javascript" charset="utf-8" src="http://cpro.baidustatic.com/cpro/ui/cm.js">\<\/script>');
+                                 sfr.write('\</body>');
+                                 sfr.close();
+    }else if (location.href.indexOf('?baidu_wise') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2390239',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                                if (location.href.indexOf('?shenma') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2390245',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+
+                                if (location.href.indexOf('?sougou') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2358985',
+                                            container: s,
+                                            size: '20,6',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+
+                                if (location.href.indexOf('?123_mobile') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2570584',
+                                            container: s,
+                                            size: '6,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                                 if (location.href.indexOf('?h5_tuiguang') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2622296',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                
+                                }
+
+                                if (location.href.indexOf('?360card') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '3052035',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                
+                                }
+
+                                if (location.href.indexOf('?') == -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2389533',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                            }
+
+                            if (i == 5 && document.domain == 't.ynet.com') {
+                                if (location.href.indexOf('?baidu_wise') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2352882',
+                                            container: s,
+                                            size: '20,12',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                                if (location.href.indexOf('?shenma') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2355895',
+                                            container: s,
+                                            size: '20,12',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                            }
+
+                            if(i == 6 && document.domain != 't.ynet.com'){
+                                var tmp = document.createElement('div');
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                _(tmp).attr('id',s);
+                                _('#wrap_recommend_bottom').append(tmp);
+                                if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                
+                                if (location.href.indexOf('?mib_juhe') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2502387',
+                                            container: s,
+                                            size: '20,12',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }else{
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2385742',
+                                            container: s,
+                                            size: '20,12',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                            }
+                            if (i == 6 && document.domain == 't.ynet.com') {
+                                if (location.href.indexOf('?') == -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2355104',
+                                            container: s,
+                                            size: '20,12',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                                if (location.href.indexOf('?123_mobile') != -1) {
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2570619',
+                                            container: s,
+                                            size: '6,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                }
+                                 if (location.href.indexOf('?h5_tuiguang') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '2622300',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                
+                                }
+                                if (location.href.indexOf('?360card') != -1){
+                                    var tmp = document.createElement('div');
+                                    var s = "_" + Math.random().toString(36).slice(2);
+                                    _(tmp).attr('id',s);
+                                    _('#wrap_recommend_bottom').append(tmp);
+                                    if(document.getElementsByTagName('head')[0].innerHTML.indexOf('http://dup.baidustatic.com/js/dm.js') == -1){var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/dm.js';document.getElementsByTagName('head')[0].appendChild(script);}
+                                    (function() {
+                                        (window.slotbydup=window.slotbydup || []).push({
+                                            id: '3052040',
+                                            container: s,
+                                            size: '20,5',
+                                            display: 'inlay-fix',
+                                            async:true
+                                        });
+                                    })();
+                                    var script=document.createElement('script');script.type='text/javascript';script.src='http://dup.baidustatic.com/js/om.js';document.getElementsByTagName('head')[0].appendChild(script);
+                                
+                                }
+                            }
+
+                        }else if(data['link'] && data['imgs'] && data['title'] && data['desc'] && data['date']){
+                            more_rdata.push('<a href="'+data['link']+'">'+data['imgs']+'</a><div class="list_detail"><p class="tuijianb1"><a href="'+data['link']+'">'+data['title']+'</a></p><p class="tuijianb3">'+data['desc']+'</p><p class="tuijianb2">'+data['date']+'</p></div>');
+                        };
+                    }
+                    inited_recommend = true;
+                }
+            }
+        });
+    }else{
+        if (!more_rdata.length || inlist_no == more_rdata.length)
+        {
+            return ;
+        }
+        _('#end').css({'height':'auto !important'});
+        if (!_('#jz_bottom').size()) {
+            _('#end').html('<div id="jz_bottom">加载更多</div>'+_('#end').html());
+        };
+        _('#jz_bottom').show();
+        window.clearTimeout(timer);
+        timer = setTimeout(function(){more_recommend();},1200);
+    }
+}
+_.ready(function(){
+    _('#ynetVideoIframe').css({'width':'100%','height':(_('#ynetVideoIframe').parent().width()*9/16)+'px'});
+    var top_back_url = '';
+    var referer = document.referrer;
+	top_back_url = 'http://'+document.domain;
+    if (!referer || referer.indexOf(document.domain) == -1)
+    {
+	top_back_url = 'http://www.ynet.com';
+    }
+    if (referer && referer.indexOf(document.domain) != -1)
+    {
+        var tmp = referer.split('/');
+	top_back_url = 'http://'+tmp[2]+'/';
+    }
+        if (top_back_url){
+      _('.top_back').click(function(){
+        location.href = top_back_url;
+      });
+        }
+        _('#gentie').prev().css({'width':'100%'});
+    _('.nav_2015 a').each(function(){
+        if (_(this).attr('data') && nav_link[_(this).attr('data')])
+        {
+            _(this).attr('href',nav_link[_(this).attr('data')]);
+        }
+    });
+    _('.share_sina').click(function(){
+     window.open('http://v.t.sina.com.cn/share/share.php?title=' + encodeURIComponent(document.title+'±±ÇàÍø'+location.href+')') + '&pic=&sourceUrl='+encodeURIComponent(location.href)+ ',_parent,toolbar=0,status=0,resizable=1,width=100%,height=500,left=0,top='+(_(window).height-500)/2);
+    });
+    _('.nav_icon').click(function(event){
+        _.stopevent(event);
+        slide_nav('.nav_2015','-15.8rem');
+        return ;
+    });
+    _('.share_icon').click(function(event){
+        _.stopevent(event);
+        slide_nav('.share_2015','-10.8rem');
+        return ;
+    });
+    _('#searchipt').click(function(event){
+        _.stopevent(event);
+        if (_(this).attr('status') == 'max')
+        {
+            return ;
+        }
+        _(document.body).css({'padding-bottom':'8.5rem'});
+        _(this).attr('status','max');
+        _('.share_btn').hide();
+        _('#pinglun').css({'height':'20rem'});
+        _('#pinglun .pl').css({'margin-top':'5px'});
+        _('#searchipt').addClass('comment_text_close');
+        _('#fx').hide();
+        _('.btn_comment').show();
+    });
+    _('#searchipt').keyup(function(){
+        _('.area-text-wap').val(_(this).val());
+    });
+    _('.btn_comment').click(function(){
+        _('.mutual-btn-wap').click();
+    });
+    _('.fullbg,#logo').click(function(event){
+        _.stopevent(event);
+        slide_nav(false);
+        return ;
+    });
+    _(document.body).click(function(event){
+            if (_('#searchipt').attr('status') == 'min')
+            {
+                return ;
+            }
+            _(document.body).css({'padding-bottom':'0px'});
+            _('#searchipt').attr('status','min');
+            _('.btn_comment').hide();
+            _('#pinglun').css({'height':'100px'});
+            _('#searchipt').removeClass('comment_text_close');
+            //_('#searchipt').css({'height':'40px','max-width':'50%','width':'50%','float':'left','margin':'30px','padding':'0px 2%'});
+            _('#fx').hide();
+            _('.share_btn').fadeIn();
+    });
+        
+    wrap_pics();
+});
+
+//for weixin
+(function() {
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        var sc = document.createElement("script");
+        sc.charset="utf-8";
+        sc.src = "//wxif.ynet.com/app.min.js";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(sc, s);
+    }
+})();
